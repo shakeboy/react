@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello react</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+</head>
+<body>
+<div id="test"></div>
+</body>
+<script type="text/babel">
+    // 模拟数据
+    let data = ['Angular','Vue','React']
+    let obj = {
+        'name':"shakeboy",
+        'age':23
+    }
+    let VDOM = (
+        <div>
+            <h1>前端框架</h1>
+            <ul>
+                {
+                    // 可以注释
+                    // 只能写js表达式 a , a+b , demo()--函数表达式 , arr.map() , function test(){}
+                    // 不能写语句：if(){},for(){},switch(){case:xxx}
+                    // console.log("test")
+                    data.map((item,index)=>{
+                        return <li key={index}>{item}</li>
+                    })
+                    // 唯一的key
+                }
+            </ul>
+        </div>
+    )
+    ReactDOM.render(VDOM,document.getElementById("test"))
+</script>
+</html>

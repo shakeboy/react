@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello react</title>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+    <style>
+        .title{
+            background-color: pink;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+<div id="test"></div>
+</body>
+<script type="text/babel">
+    let myId = "shakeboy"
+    let myData = "hello jsx"
+    let vdom = (
+        <div>
+            <h2 id={myId} className="title">
+                <span style={{color:"red",fontSize:'40px'}}>{myData.toUpperCase()}</span>
+            </h2>
+            <input type="text"/>
+            <br/>
+            <br/>
+            hello
+            <bood>呵呵呵呵</bood>
+
+        </div>
+    )
+    ReactDOM.render(vdom,document.getElementById("test"))
+    /**
+     * jsx语法规则
+     *  1.定义jsx时，不要写引号
+     *  2.花括号引入变量,标签中写js表达式
+     *  3.样式类名className，不要用class
+     *  4.内联样式
+     *  5.虚拟DOM只能有一个根标签
+     *  6.标签必须闭合
+     *  7.标签首字母
+     *      a.若小写字母开头，则将该标签转为HTML中同名元素，若HTML中没有同名元素，则报错
+     *      b.若大写字母开头，react就去渲染对应的组件，若组件未定义，则报错
+      */
+</script>
+</html>
